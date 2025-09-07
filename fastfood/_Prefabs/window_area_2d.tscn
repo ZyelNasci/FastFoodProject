@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b470ncs8le233"]
+
+[ext_resource type="Script" uid="uid://cjxuclv5hxkn3" path="res://_Scripts/Behaviour/DragArea.cs" id="1_suqe6"]
+[ext_resource type="Texture2D" uid="uid://dvwou5rjofcp0" path="res://_Sprites/Placeholder/Front.png" id="2_l7pqa"]
+[ext_resource type="PackedScene" uid="uid://du2hjoqtolvvu" path="res://_Prefabs/hamburguer.tscn" id="3_78ixw"]
+[ext_resource type="FontFile" uid="uid://b47fcs20pkbb3" path="res://_Fonts/DS-DIGI.TTF" id="6_suqe6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68vxo"]
+size = Vector2(144, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83gr8"]
+size = Vector2(139, 13)
+
+[sub_resource type="LabelSettings" id="LabelSettings_suqe6"]
+font = ExtResource("6_suqe6")
+font_size = 18
+font_color = Color(0, 1, 0, 1)
+
+[node name="Window_Area2D" type="Area2D"]
+script = ExtResource("1_suqe6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_l7pqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -94.5)
+shape = SubResource("RectangleShape2D_68vxo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_83gr8")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -67.0
+offset_top = 80.0
+offset_right = 4.0
+offset_bottom = 103.0
+text = "$ 0"
+label_settings = SubResource("LabelSettings_suqe6")
+vertical_alignment = 1
+
+[node name="Hamburguer" parent="." instance=ExtResource("3_78ixw")]
+z_index = 2
+script = ExtResource("1_suqe6")

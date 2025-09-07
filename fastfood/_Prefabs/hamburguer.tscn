@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://du2hjoqtolvvu"]
+
+[ext_resource type="Texture2D" uid="uid://gasaf0lvcnxe" path="res://_Sprites/Placeholder/Hamburger.png" id="2_ur7yv"]
+[ext_resource type="Script" uid="uid://cucwjyyw6trmh" path="res://_Scripts/Behaviour/Gravidade.cs" id="3_s3g2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv4da"]
+size = Vector2(25, 23)
+
+[node name="Hamburguer" type="Area2D"]
+scale = Vector2(2, 2)
+priority = 1
+metadata/_edit_horizontal_guides_ = [-137.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
+texture_filter = 1
+texture = ExtResource("2_ur7yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rv4da")
+
+[node name="Gravity" type="Node2D" parent="."]
+script = ExtResource("3_s3g2i")
