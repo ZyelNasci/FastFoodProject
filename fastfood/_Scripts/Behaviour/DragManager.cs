@@ -30,7 +30,6 @@ public partial class DragManager : Node2D
                 foreach (var result in results)
                 {
                     var collider = result["collider"];
-
                     DragArea area = collider.As<DragArea>();
                     if (area != null && area.ZIndex > maiorZ)
                     {
