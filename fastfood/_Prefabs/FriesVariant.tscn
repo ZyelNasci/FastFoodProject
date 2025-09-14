@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d616tw5vab2"]
+
+[ext_resource type="PackedScene" uid="uid://du2hjoqtolvvu" path="res://_Prefabs/Food.tscn" id="1_w0bym"]
+[ext_resource type="Texture2D" uid="uid://c8qmxxf0afxe7" path="res://_Sprites/Placeholder/Foods/Fries.png" id="2_f1d3p"]
+
+[node name="Food" instance=ExtResource("1_w0bym")]
+type = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_f1d3p")

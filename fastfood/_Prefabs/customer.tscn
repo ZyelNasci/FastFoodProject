@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccfitrbf1vvf4"]
+
+[ext_resource type="Texture2D" uid="uid://btssixwm382x3" path="res://_Sprites/Placeholder/NPCs/Careca.png" id="1_k17k3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjt78"]
+atlas = ExtResource("1_k17k3")
+region = Rect2(0, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sph8s"]
+atlas = ExtResource("1_k17k3")
+region = Rect2(60, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83gr8"]
+atlas = ExtResource("1_k17k3")
+region = Rect2(120, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hy0n"]
+atlas = ExtResource("1_k17k3")
+region = Rect2(180, 0, 60, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3psas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjt78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sph8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83gr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hy0n")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k17k3"]
+radius = 29.0172
+
+[node name="Customer" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_3psas")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.249244
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -21)
+shape = SubResource("CircleShape2D_k17k3")

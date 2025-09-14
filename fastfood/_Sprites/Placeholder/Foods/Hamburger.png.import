@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8qmxxf0afxe7"
-path="res://.godot/imported/Fries.png-18e4c3f49a52465d0d6d413a4280f028.ctex"
+uid="uid://gasaf0lvcnxe"
+path="res://.godot/imported/Hamburger.png-138095f8195418e75d8fb3c4aec96921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Sprites/Placeholder/Fries.png"
-dest_files=["res://.godot/imported/Fries.png-18e4c3f49a52465d0d6d413a4280f028.ctex"]
+source_file="res://_Sprites/Placeholder/Foods/Hamburger.png"
+dest_files=["res://.godot/imported/Hamburger.png-138095f8195418e75d8fb3c4aec96921.ctex"]
 
 [params]
 

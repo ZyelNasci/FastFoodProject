@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://b470ncs8le233"]
+
+[ext_resource type="Script" uid="uid://dcab11v78trm6" path="res://_Scripts/FoodStoreIndividual.cs" id="1_pq45k"]
+[ext_resource type="Texture2D" uid="uid://dvwou5rjofcp0" path="res://_Sprites/Placeholder/Front.png" id="2_l7pqa"]
+[ext_resource type="Script" uid="uid://2xn6iwals4o8" path="res://_Scripts/Deprecated/Drag.cs" id="2_vla1n"]
+[ext_resource type="PackedScene" uid="uid://du2hjoqtolvvu" path="res://_Prefabs/Food.tscn" id="3_78ixw"]
+[ext_resource type="Texture2D" uid="uid://c8qmxxf0afxe7" path="res://_Sprites/Placeholder/Foods/Fries.png" id="3_or4j0"]
+[ext_resource type="PackedScene" uid="uid://ccfitrbf1vvf4" path="res://_Prefabs/customer.tscn" id="5_78ixw"]
+[ext_resource type="FontFile" uid="uid://b47fcs20pkbb3" path="res://_Fonts/DS-DIGI.TTF" id="6_suqe6"]
+[ext_resource type="PackedScene" uid="uid://d616tw5vab2" path="res://_Prefabs/FriesVariant.tscn" id="8_or4j0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv4da"]
+size = Vector2(25, 23)
+
+[sub_resource type="PackedScene" id="PackedScene_1fhhc"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Fries", "Area2D", "scale", "script", "Sprite2D", "Sprite2D", "visibility_layer", "texture_filter", "texture", "CollisionShape2D", "CollisionShape2D", "shape"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 3, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 1, 11, 5, 0),
+"variants": [Vector2(2, 2), ExtResource("2_vla1n"), 2, 1, ExtResource("3_or4j0"), SubResource("RectangleShape2D_rv4da")],
+"version": 3
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68vxo"]
+size = Vector2(144, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83gr8"]
+size = Vector2(139, 13)
+
+[sub_resource type="LabelSettings" id="LabelSettings_suqe6"]
+font = ExtResource("6_suqe6")
+font_size = 18
+font_color = Color(0, 1, 0, 1)
+
+[node name="StoreFood" type="Area2D"]
+script = ExtResource("1_pq45k")
+hamburguerPrefab = Array[PackedScene]([SubResource("PackedScene_1fhhc"), ExtResource("3_78ixw")])
+
+[node name="Customer" parent="." instance=ExtResource("5_78ixw")]
+position = Vector2(-1, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_l7pqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -94.5)
+shape = SubResource("RectangleShape2D_68vxo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_83gr8")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -67.0
+offset_top = 80.0
+offset_right = 4.0
+offset_bottom = 103.0
+text = "$ 0"
+label_settings = SubResource("LabelSettings_suqe6")
+vertical_alignment = 1
+
+[node name="Food" parent="." instance=ExtResource("3_78ixw")]
+position = Vector2(-43, 18)
+
+[node name="Food2" parent="." instance=ExtResource("8_or4j0")]
+position = Vector2(39, 19)

@@ -8,6 +8,14 @@ public partial class Gravidade : Node
     private bool isOnGround = false;
 
     private bool isDragging = false;
+    
+    private Rect2 screenBounds;
+
+    public override void _Ready()
+    {
+        var viewport = GetViewport();
+        screenBounds = new Rect2(Vector2.Zero, viewport.GetVisibleRect().Size);
+    }
 
     public void SetIsDraggin(bool _value)
     {
@@ -15,7 +23,7 @@ public partial class Gravidade : Node
         if (_value)
         {
             velocity.Y = 0;
-            isOnGround = false;            
+            isOnGround = false;
         }
     }
 
@@ -33,6 +41,8 @@ public partial class Gravidade : Node
     private void CheckGround(Node2D parent)
     {
         var spaceState = parent.GetWorld2D().DirectSpaceState;
+
+        //if(parent.GlobalPosition > screenbou)
 
         var collisionShape = parent.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
         if (collisionShape == null || collisionShape.Shape == null)

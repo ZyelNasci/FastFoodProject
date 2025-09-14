@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gasaf0lvcnxe"
-path="res://.godot/imported/Hamburger.png-e6f062345cf17df6e611afe9b5f9e853.ctex"
+uid="uid://btssixwm382x3"
+path="res://.godot/imported/Careca.png-95b7a648258495f5fffb659b22dacbeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Sprites/Placeholder/Hamburger.png"
-dest_files=["res://.godot/imported/Hamburger.png-e6f062345cf17df6e611afe9b5f9e853.ctex"]
+source_file="res://_Sprites/Placeholder/NPCs/Careca.png"
+dest_files=["res://.godot/imported/Careca.png-95b7a648258495f5fffb659b22dacbeb.ctex"]
 
 [params]
 
